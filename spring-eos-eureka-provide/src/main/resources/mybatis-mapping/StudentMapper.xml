@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spring.cloud.eos.eureka.provide.main.mapper.StudentMapper">
+    <select id="findStudent" parameterType="integer"
+            resultType="spring.cloud.eos.eureka.api.main.entity.Student">
+		select *
+		from student where id = #{id}
+	</select>
+    <insert id="saveStudent" parameterType="spring.cloud.eos.eureka.api.main.entity.Student">
+		insert into student(id,name)
+		values(#{id},#{name})
+	</insert>
+    <delete id="deleteStudent" parameterType="integer">
+		delete from student where id
+		= #{id}
+	</delete>
+</mapper>

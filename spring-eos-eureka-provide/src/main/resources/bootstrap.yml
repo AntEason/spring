@@ -1,0 +1,22 @@
+server:
+  port: 20001
+#  context-path: /example
+#数据库设置
+spring:
+  application:
+    name: spring-eos-eureka-provide    # 对应config server所获取的配置文件的{application}
+  cloud:
+    config:
+      profile: dev
+      fail-fast: true
+      password: eos
+      username: user
+      discovery:
+        enabled: true                                  # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: spring-eos-eureka-config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/   #注册的位置
+  instance:
+    prefer-ip-address: true  #将自己的ip注册到EuekaServer上

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-eos-eureka-consume
+server:
+  port: 30001
+  
